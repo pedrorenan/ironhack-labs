@@ -1,6 +1,6 @@
 -- Challenge 1
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   t.title as TITLE,
@@ -13,7 +13,7 @@ ORDER BY a.au_id;
 
 -- Challenge 2
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   p.pub_name as PUBLISHER,
@@ -28,7 +28,7 @@ ORDER BY a.au_id DESC;
 -- Challenge 3
 -- using sales table
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   SUM(s.qty) as TOTAL
@@ -42,7 +42,7 @@ LIMIT 3;
 
 -- using ytd_sales field
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   SUM(t.ytd_sales) as TOTAL
@@ -56,7 +56,7 @@ LIMIT 3;
 -- Challenge 4
 -- using sales table
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   IFNULL(SUM(s.qty), 0) as TOTAL
@@ -69,7 +69,7 @@ ORDER BY TOTAL DESC;
 
 -- using ytd_sales field
 Select 
-	a.au_id as AUTHOR,
+  a.au_id as AUTHOR,
   a.au_lname as 'LAST NAME',
   a.au_fname as 'FIRST NAME',
   IFNULL(SUM(t.ytd_sales), 0) as TOTAL
@@ -78,10 +78,3 @@ LEFT JOIN titleauthor as ta ON ta.au_id = a.au_id
 LEFT JOIN titles as t ON t.title_id = ta.title_id
 GROUP BY  a.au_id
 ORDER BY TOTAL DESC;
-
-
-
-
-
-
-
