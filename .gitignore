@@ -1,3 +1,5 @@
 *.csv
 *.zip
-lab-transfer-learing-2/assets/*
+#ignore folders and filles in the assets folder into lab-transfer-learning-2
+lab-transfer-learning-2/assets/
+.DS_Store
